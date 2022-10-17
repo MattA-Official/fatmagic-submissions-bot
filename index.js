@@ -22,7 +22,10 @@ client.once("ready", (c) => {
 client.on("messageCreate", (message) => {
   try {
     // Only process messages in the submissions channel
-    if (message.channelId === config.channel) {
+    if (
+      message.channelId === config.channel &&
+      message.author.id !== client.user.id
+    ) {
       // If the message has an attachment
       if (
         (message.attachments.size === 1 && message.embeds.length === 0) ||
