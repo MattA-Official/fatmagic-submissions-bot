@@ -33,7 +33,7 @@ client.on("messageCreate", (message) => {
           // If so, reply and delete the message
           message
             .reply(
-              `You have already submitted the maximum number of images (${config.max})`
+              `You have already submitted the maximum number of images (${config.max}) please delete a previous submission before submitting another.`
             )
             .then((m) => {
               setTimeout(() => {
